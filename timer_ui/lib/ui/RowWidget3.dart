@@ -4,8 +4,8 @@ class RowWidget3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final startSection = new Container(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+//      child: Padding(
+//        padding: const EdgeInsets.all(8.0),
         child: new Row(
 
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -23,7 +23,7 @@ class RowWidget3 extends StatelessWidget {
           ],
         ),
 
-      ),
+   //   ),
     );
 
     final midSection = new Expanded(
@@ -42,8 +42,8 @@ class RowWidget3 extends StatelessWidget {
       ),
     );
     final endSection = new Container(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+//      child: Padding(
+//        padding: const EdgeInsets.all(8.0),
         child: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -55,11 +55,11 @@ class RowWidget3 extends StatelessWidget {
             new rowWidget.MyButtonTheme('ReStart', Colors.green),
           ],
         ),
-      ),
+   //   ),
     );
 
     var appBarWidget = AppBar(
-      title: Text("Timer UI"),
+      title: Text("Timer "),
     );
     return Scaffold(
       appBar: appBarWidget,

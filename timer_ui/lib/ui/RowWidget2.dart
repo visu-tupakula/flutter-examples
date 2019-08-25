@@ -31,6 +31,7 @@ class MyButtonTheme extends StatelessWidget {
     return Expanded (
 
       child: RaisedButton(
+        padding: new EdgeInsets.all(4.0),
         onPressed: () {},
         child: Text(btnName,
             style: new TextStyle(
