@@ -1,0 +1,88 @@
+// importing this package gives us the dart widgets
+// as well as the Material Theme widgets
+import 'package:flutter/material.dart';
+
+
+// the main() function is the starting point for every Flutter project
+void main() {
+  runApp(MaterialApp(
+      title: "Make it Rain!",
+      home: new TipCalculator()
+  ));
+}
+
+
+class TipCalculator extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return
+      Scaffold(
+        appBar: AppBar(
+          // The AppBar property takes a Text widget for its title property
+          title:  Text("Exploring Widgets"),
+        ),
+        body: myWidget(context),
+      );
+
+  }
+
+  double text1 = 0;
+  double text2 = 0;
+
+  Widget myWidget(BuildContext context) {
+
+      return Column(children: [
+        TextField(
+           // keyboardType: TextInputType.number,
+            onChanged: (text) {
+              text1 = double.parse(text);
+              print(text1);
+            },
+            decoration: InputDecoration(
+              hintMaxLines: 60,
+              hintText: "Enter total amount here",
+
+              //errorText: "please enter only numbers"
+            ),
+          ),
+
+         TextField(
+            keyboardType: TextInputType.number,
+            onChanged: (text) {
+              text2 = double.parse(text);
+              print(text2);
+            },
+            decoration: InputDecoration(
+              labelText: "Tip 15%",
+              hintMaxLines: 60,
+              hintText: "Enter tip amount here"              
+            ),
+          ),
+
+         RaisedButton(
+              child: const Text("Calculate",
+                  style: TextStyle(fontSize: 30, color: Colors.white)),
+              color: Colors.blue,
+              elevation: 15.0,
+              splashColor: Colors.yellow,
+              onPressed: () {
+                double value1 = (text2 / 100 * text1);
+
+// Generate dialog
+
+                var total = value1 + text1;
+                AlertDialog dialog = AlertDialog(
+                    content: Text("Tip: \$$value1 \n"
+                        "Total: \$$total"));
+
+                // Show dialog
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => dialog);
+              }
+          ),
+
+      ]);
+
+  }
+}
