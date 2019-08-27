@@ -93,7 +93,7 @@ class MyButtonTheme extends StatelessWidget {
       color: btColor,
       child: Text(
         btnName,
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(fontSize: 15),
       ),
       onPressed: () {},
     );
